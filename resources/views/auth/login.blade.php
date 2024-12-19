@@ -2,6 +2,13 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <!-- Register Button at the top right -->
+    <div class="flex justify-end mb-4">
+        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+            {{ __('Register') }}
+        </a>
+    </div>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -43,6 +50,7 @@
                 {{ __('Log in') }}
             </x-primary-button>
 
+            
         </div>
     </form>
 </x-guest-layout>
